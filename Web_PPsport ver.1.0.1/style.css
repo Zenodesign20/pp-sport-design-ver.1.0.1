@@ -1,0 +1,199 @@
+/* ===============================
+   GLOBAL
+================================ */
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:#000;
+  color:#fff;
+  font-family:Arial,Helvetica,sans-serif;
+}
+a{text-decoration:none}
+
+/* ===============================
+   HERO / LOGO
+================================ */
+.hero{
+  text-align:center;
+  padding:90px 20px;
+  position:relative;
+  overflow:hidden;
+}
+
+.logo{
+  width:140px;
+  margin-bottom:20px;
+}
+
+.brand{
+  font-size:48px;
+  letter-spacing:4px;
+}
+
+.subtitle{
+  opacity:.8;
+}
+
+/* ===============================
+   FACEBOOK (HOME ONLY)
+================================ */
+.fb-home{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  margin-top:20px;
+  color:#1877f2;
+  font-weight:bold;
+}
+
+.fb-home::before{
+  content:"";
+  width:42px;
+  height:42px;
+  background:#1877f2;
+  border-radius:50%;
+  display:inline-block;
+  background-image:url("https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg");
+  background-size:22px;
+  background-repeat:no-repeat;
+  background-position:center;
+}
+
+/* ===============================
+   MENU
+================================ */
+.menu{
+  display:flex;
+  justify-content:center;
+  gap:26px;
+  padding:30px;
+}
+.menu a{
+  color:gold;
+  font-size:18px;
+  position:relative;
+}
+.menu a::after{
+  content:"";
+  position:absolute;
+  left:0;bottom:-6px;
+  width:0;height:2px;
+  background:gold;
+  transition:.3s;
+}
+.menu a:hover::after{width:100%}
+
+/* ===============================
+   GRID / GALLERY
+================================ */
+.title{
+  text-align:center;
+  margin:40px 0;
+  font-size:36px;
+}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+  gap:20px;
+  padding:20px;
+}
+.grid img{
+  width:100%;
+  border-radius:10px;
+  cursor:pointer;
+  opacity:0;
+  transform:translateY(40px);
+  transition:.5s ease;
+}
+.grid img.loaded{
+  opacity:1;
+  transform:translateY(0);
+}
+.grid img:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 30px rgba(255,215,0,.5);
+}
+
+/* ===============================
+   LIGHTBOX
+================================ */
+#lightbox{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.95);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  opacity:0;
+  pointer-events:none;
+  transition:.3s;
+  z-index:9999;
+}
+#lightbox.active{
+  opacity:1;
+  pointer-events:auto;
+}
+#lightbox img{
+  max-width:90%;
+  max-height:90%;
+}
+
+/* ===============================
+   CURSOR (NIKE STYLE)
+================================ */
+body{cursor:none}
+.cursor{
+  position:fixed;
+  width:14px;height:14px;
+  border:2px solid gold;
+  border-radius:50%;
+  pointer-events:none;
+  transform:translate(-50%,-50%);
+  z-index:10000;
+}
+
+/* ===============================
+   PARALLAX
+================================ */
+.parallax{
+  will-change:transform;
+}
+
+/* ===============================
+   BACK LINK
+================================ */
+.back{
+  display:inline-block;
+  margin:20px;
+  color:gold;
+}
+
+/* ===============================
+   JERSEY PAGINATION
+================================ */
+.pager{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:40px 20px;
+  max-width:900px;
+  margin:auto;
+}
+
+.pager a{
+  color:gold;
+  border:1px solid gold;
+  padding:12px 26px;
+  letter-spacing:2px;
+  transition:.3s ease;
+}
+
+.pager a:hover{
+  background:gold;
+  color:#000;
+}
+
+.pager .disabled{
+  opacity:.3;
+  pointer-events:none;
+}

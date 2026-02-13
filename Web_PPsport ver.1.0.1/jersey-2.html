@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JERSEY COLLECTION 2</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a href="index.html" class="back">← HOME</a>
+<h2 class="title">JERSEY COLLECTION (2 / 10)</h2>
+
+<div class="grid">
+<script>
+for(let i=51;i<=100;i++){
+ document.write(`<img data-src="images/jersey/j(${i}).jpg" alt="Jersey ${i}">`);
+}
+</script>
+</div>
+
+<div class="pager">
+  <a href="jersey-1.html">◀ PREV</a>
+  <a href="jersey-3.html">NEXT ▶</a>
+</div>
+
+<div class="cursor"></div>
+<script src="script.js"></script>
+</body>
+</html>
